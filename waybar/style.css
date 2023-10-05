@@ -55,6 +55,7 @@ button:hover {
     color: #ffffff;
     border-radius: 5px;
     margin: 10px 0 0 10px;
+    border: 3px solid #7a1405;
 }
 
 #workspaces button:hover {
@@ -97,11 +98,13 @@ button:hover {
     color: #583A24;
     border-radius: 5px;
     margin: 10px 10px 0 0;
+    border: 3px solid #7a1405;
 }
 
 #window {
     margin-left: 10px;
     background: transparent;
+    border: 0;
     color: #fff;
 }
 
