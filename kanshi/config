@@ -1,0 +1,9 @@
+profile {
+	output eDP-1 enable
+}
+
+profile {
+	output eDP-1 enable scale 1.5
+	output HDMI-1 mode 3440x1440 position 1920,0
+}
+
