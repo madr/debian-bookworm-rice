@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "sway/window"],
     "modules-center": [],
-    "modules-right": ["idle_inhibitor", "mpd", "pulseaudio", "network", "backlight", "battery", "sway/language", "clock"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "sway/language", "clock"],
     // Modules configuration
     "sway/workspaces": {
     //     "disable-scroll": true,
