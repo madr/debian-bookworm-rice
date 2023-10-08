@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: monospace;
+    font-family: Cantarell,'Ubuntu Mono',monospace;
     font-size: 16px;
 }
 
@@ -44,21 +44,22 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
+    border: none;
 }
 
 #workspaces {
 }
 
-#workspaces button {
+#workspaces button,
+#workspaces button:hover {
     background-color: #585148;
-    padding: 0 16px;
     color: #ffffff;
     border-radius: 5px;
-    margin: 10px 0 0 10px;
     border: 3px solid #7a1405;
-}
-
-#workspaces button:hover {
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 0 8px;
+    margin: 10px 0 0 10px;
 }
 
 #workspaces button.focused {
@@ -106,6 +107,7 @@ button:hover {
     background: transparent;
     border: 0;
     color: #fff;
+    font-size: 19px;
 }
 
 #clock {
