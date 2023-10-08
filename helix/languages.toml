@@ -1,0 +1,12 @@
+[[language]]
+name = "python"
+auto-format = true
+formatter = { command = "black", args = ["--quiet", "-"] }
+
+[[language]]
+name = "elixir"
+auto-format = true
+
+[[language]]
+name = "html"
+auto-format = true
