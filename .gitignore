@@ -1,5 +1,6 @@
-	dconf
-	helix
-	nvim
-	pulse
-	systemd
+neofetch
+dconf
+helix
+nvim
+pulse
+systemd
