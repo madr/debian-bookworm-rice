@@ -1,6 +1,8 @@
 alias gl="git log --oneline --decorate"
 
-#export XDG_DATA_DIRS="/home/aey/.local/share/flatpak/exports/share"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
