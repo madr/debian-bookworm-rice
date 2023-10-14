@@ -11,5 +11,38 @@ function pip-user-install () {
   pip install -U --break-system-packages $*
 }
 
-
+export XDG_SCREENSHOTS_DIR="/home/aey/screenshots"
 export PATH=/home/aey/.cargo/bin:/home/aey/.local/bin:$PATH
+
+alias ll='ls -GAFho'
+alias imv='imv-wayland'
+alias gap="git add -p"
+alias gcane='git commit --amend --no-edit'
+alias glo='git log --oneline --decorate'
+alias gf="git fetch"
+alias gm='git merge origin/$(git rev-parse --abbrev-ref HEAD)'
+alias gmom="git merge origin/master"
+alias gmsot='git merge --strategy-option theirs'
+alias gp='git push origin HEAD'
+alias grh='git reset --hard'
+alias gri="git rebase -i"
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
+alias gscs="git show --compact-summary"
+alias gs="git status"
+alias gd='git diff'
+alias gs='git switch'
+alias gs-='git switch -'
+alias gsc='git switch -c'
+
+alias glenn='gp'
+alias glass='gb'
+
+alias fucking='sudo'
+alias effing='fucking'
+
+alias vadre="curl -4 http://wttr.in/Östersund"
+alias vedreh="curl -4 http://wttr.in/Stockholm"
+alias vädret="curl -4 http://wttr.in/Borlänge"
+alias whatsmyip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
+alias whois='dig -t ANY'
