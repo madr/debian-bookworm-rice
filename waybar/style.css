@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Cantarell,'Ubuntu Mono',monospace;
+    font-family: 'Fira Code',Cantarell,'Ubuntu Mono',monospace;
     font-size: 16px;
 }
 
@@ -95,7 +95,7 @@ button:hover {
 #window,
 #language {
     background: #E9E2C9;
-    padding: 0 10px;
+    padding: 5px 10px 3px;
     color: #583A24;
     border-radius: 5px;
     margin: 10px 10px 0 0;
@@ -107,7 +107,7 @@ button:hover {
     background: transparent;
     border: 0;
     color: #fff;
-    font-size: 19px;
+    font-size: 17px;
 }
 
 #clock {

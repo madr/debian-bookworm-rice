@@ -280,6 +280,8 @@ set $border_unfocused #7a1405
 #client.unfocused $border_unfocused $unfocused_background $font_color
 #client.focused_inactive $border_unfocused $unfocused_background $font_color
 
+#exec cd /home/aey/config && wal -R && cd -
+
 default_border pixel 3
 default_floating_border pixel 3
 #font pango:monospace 0
