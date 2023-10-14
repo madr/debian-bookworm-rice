@@ -222,11 +222,11 @@ bindsym $mod+r mode "resize"
 # xwayland disable
 
 exec swayidle -w \
-    timeout 180 'swaylock -f --image /home/aey/.config/sway/wallpapers/football-3.jpg' \
+    timeout 180 'swaylock -f --image /home/aey/.config/sway/wallpapers/football-4.jpg' \
 	timeout 1805 'swaymsg "output * power off"' \
 	resume 'swaymsg "output * power on"' \
     before-sleep 'playerctl pause' \
-    before-sleep 'swaylock --image /home/aey/.config/sway/wallpapers/football-3.jpg'
+    before-sleep 'swaylock --image /home/aey/.config/sway/wallpapers/football-4.jpg'
 
 gaps inner 10
 
