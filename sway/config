@@ -248,8 +248,16 @@ bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-bindsym $mod+Print exec grim -g "$(slurp)"
-#bindsym $mod+shift+Print exec grim -g "$(slurp)" | wl-copy
+
+
+#bindsym Print        exec grimshot save output
+bindsym Print        exec grimshot save active
+bindsym Shift+Print  exec grimshot save area
+bindsym Ctrl+Print   exec grimshot save window
+
+bindsym Mod1+Print        exec grimshot copy active
+bindsym Mod1+Shift+Print  exec grimshot copy area
+bindsym Mod1+Ctrl+Print   exec grimshot copy window
 
 set $manlock exec bash ~/.config/sway/manual-lock.sh
 bindsym $mod+Shift+Escape exec $manlock
