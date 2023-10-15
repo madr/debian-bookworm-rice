@@ -23,7 +23,7 @@ echo ". ~/.config/bashrc" >> ~/.bashrc
 Essential packages:
 
 ```sh
-apt install neovim foot light sway swaylock swayidle seatd waybar imv kanshi nmtui network-manager git fuzzel bash-completion grimshot otf-font-awesome fonts-ubuntu wl-clipboard entr fonts-freefont-otf
+apt install alacritty light sway swaylock swayidle seatd waybar imv kanshi nmtui network-manager git fuzzel bash-completion grimshot otf-font-awesome fonts-ubuntu entr fonts-freefont-otf
 ```
 
 Additional packages:

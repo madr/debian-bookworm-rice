@@ -14,5 +14,11 @@ curl --fail --location --show-error https://github.com/tonsky/FiraCode/releases/
 unzip -o -q -d ${fonts_dir} ${zip}
 rm ${zip}
 
+version=2.304
+zip=JetBrainsMono-${version}.zip
+curl --fail --location --show-error https://download.jetbrains.com/fonts/${zip} --output ${zip}
+unzip -o -q -d ${fonts_dir} ${zip}
+rm ${zip}
+
 echo "fc-cache -f"
 fc-cache -f
