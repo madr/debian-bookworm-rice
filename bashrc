@@ -13,6 +13,7 @@ function pip-user-install () {
 
 export XDG_SCREENSHOTS_DIR="/home/aey/screenshots"
 export PATH=/home/aey/.cargo/bin:/home/aey/.local/bin:$PATH
+export PATH=/home/aey/.asdf/installs/rust/1.73.0/bin:$PATH
 
 alias ll='ls -GAFho'
 alias imv='imv-wayland'
