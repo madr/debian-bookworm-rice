@@ -42,14 +42,27 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ```
 
+Enable plugins.
+
+```
+asdf plugin add erlang
+asdf plugin add elixir
+asdf plugin add nodejs
+asdf plugin add rust
+asdf erlang install latest
+asdf elixir install latest
+asdf nodejs install latest
+asdf rust install latest
+```
+
 ## Install Helix
 
 Helix is built from source, since no Debian binary or PPA is available.The most recent version that works with the Debian provided `rustc` is version `22.12`.
 
-Install rust toolchain as root:
+Install rust toolchain:
 
 ```
-apt install cargo
+asdf global rust latest
 ```
 
 Based on the instructions here:
@@ -60,11 +73,16 @@ https://docs.helix-editor.com/install.html#building-from-source
 ```
 git clone https://github.com/helix-editor/helix ~/.helix
 cd ~/.helix
-git checkout 22.12
 cargo install --path helix-term --locked
 ```
 
 Also install Language servers.
+
+```
+pip3 install python-lsp-server[all]
+asdf global nodejs latest
+npm i -g typescript-language-server
+```
 
 ## Install Flatpak apps
 
