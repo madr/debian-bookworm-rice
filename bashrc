@@ -48,6 +48,8 @@ alias vädret="curl -4 http://wttr.in/Borlänge"
 alias whatsmyip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias whois='dig -t ANY'
 
+alias ssha='eval "$(ssh-agent -s)" && ssh-add'
+
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
