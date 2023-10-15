@@ -10,3 +10,4 @@ auto-format = true
 [[language]]
 name = "html"
 auto-format = true
+formatter = { command = 'prettier', args = ["--parser", "html"] }
