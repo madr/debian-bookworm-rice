@@ -1,1 +1,10 @@
 theme = "catppuccin_macchiato"
+
+[editor]
+bufferline = "multiple"
+#rulers = [90]
+true-color = true
+
+[editor.lsp]
+auto-signature-help = false
+display-messages = true
