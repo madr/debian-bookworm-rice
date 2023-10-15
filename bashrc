@@ -30,7 +30,7 @@ alias gri="git rebase -i"
 alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 alias gscs="git show --compact-summary"
-alias gs="git status"
+alias gss="git status"
 alias gd='git diff'
 alias gs='git switch'
 alias gs-='git switch -'
@@ -47,3 +47,8 @@ alias vedreh="curl -4 http://wttr.in/Stockholm"
 alias vädret="curl -4 http://wttr.in/Borlänge"
 alias whatsmyip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias whois='dig -t ANY'
+
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+PS1='\u:\W $(__git_ps1 "(%s)")\$ '
