@@ -1,9 +1,13 @@
-profile {
+profile undocked {
 	output eDP-1 enable
 }
 
-profile {
-	output eDP-1 enable scale 1.5
-	output HDMI-1 mode 3440x1440 position 1920,0
+profile ultrawide {
+	output HDMI-A-2 mode 3440x1440 enable scale 1.0 position 0,0
+	output eDP-1 enable scale 1.0 position 3440,200
 }
 
+profile dellu24 {
+	output HDMI-A-2 mode 1920x1080 enable scale 1.0 position 0,0
+	output eDP-1 enable scale 1.0 position 0,1080
+}
