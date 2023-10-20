@@ -1,19 +1,19 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: 'JetBrains Mono','Fira Code',Cantarell,'Ubuntu Mono',monospace;
-    font-size: 16px;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: 'JetBrains Mono', 'Fira Code', Cantarell, 'Ubuntu Mono', monospace;
+  font-size: 15px;
 }
 
 window#waybar {
-    background-color: transparent;
-    border-bottom: 0; 
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: #E9E2C9;
+  border-bottom: 3px solid #7a1405;
+  color: #000000;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 /*
@@ -26,54 +26,58 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+  background-color: #3F3F3F;
 }
 
 window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+  background-color: #000000;
+  border: none;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 5px;
+  /* Use box-shadow instead of border so the text isn't offset */
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
-    border: none;
+  background: inherit;
+  border: none;
 }
 
 #workspaces {
+  margin: 0 0 0 10px;
 }
 
 #workspaces button,
 #workspaces button:hover {
-    background-color: #585148;
-    color: #ffffff;
-    border-radius: 5px;
-    border: 3px solid #7a1405;
-    border-radius: 8px;
-    box-shadow: none;
-    padding: 0 8px;
-    margin: 10px 0 0 10px;
+  background: #E9E2C9;
+  color: #583A24;
+  box-shadow: none;
+  padding: 0 4px 0 0;
+  margin: 0 0;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid #7a1405;
 }
 
 #workspaces button.focused {
-    background: #E9E2C9;
-    color: #583A24;
+  background: #E9E2C9;
+  color: #583A24;
 }
 
 #workspaces button.urgent {
-    background-color: #7A1405;
+  background-color: #7A1405;
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+  background-color: #64727D;
+  border-bottom: 3px solid #ffffff;
 }
 
 #clock,
@@ -94,161 +98,142 @@ button:hover {
 #mpd,
 #window,
 #language {
-    background: #E9E2C9;
-    padding: 5px 10px 3px;
-    color: #583A24;
-    border-radius: 5px;
-    margin: 10px 10px 0 0;
-    border: 3px solid #7a1405;
+  background: #E9E2C9;
+  padding: 0 0;
+  color: #583A24;
+  border-radius: 0;
+  margin: 8px 0;
+  border: 0px solid #7a1405;
 }
 
 #window {
-    margin-left: 10px;
-    background: transparent;
-    border: 0;
-    color: #fff;
-    font-size: 17px;
+  background: transparent;
+  border: 0;
+  color: #583A24;
 }
 
 #clock {
+  margin-right: 10px;
 }
 
-#battery {
-}
+#battery {}
 
-#battery.charging, #battery.plugged {
-}
+#battery.charging,
+#battery.plugged {}
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #7a1405;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: #7a1405;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 label:focus {
-    background-color: #000000;
+  background-color: #000000;
 }
 
-#cpu {
-}
+#cpu {}
 
-#memory {
-}
+#memory {}
 
-#disk {
-}
+#disk {}
 
-#backlight {
-}
+#backlight {}
 
-#network {
-}
+#network {}
 
 #network.disconnected {
-    background-color: #7A1405;
-    color: #FFFFFF;
+  background-color: #7A1405;
+  color: #FFFFFF;
 }
 
-#pulseaudio {
-}
+#pulseaudio {}
 
 #pulseaudio.muted {
-    background-color: #158F9C;
-    color: #000000;
+  background-color: #158F9C;
+  color: #000000;
 }
 
-#wireplumber {
-}
+#wireplumber {}
 
-#wireplumber.muted {
-}
+#wireplumber.muted {}
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
+  background-color: #66cc99;
+  color: #2a5c45;
+  min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
+  background-color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
+  background-color: #ffa000;
 }
 
-#temperature {
+#temperature {}
+
+#temperature.critical {}
+
+#tray {}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
 }
 
-#temperature.critical {
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
 }
 
-#tray {
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-}
+#idle_inhibitor {}
 
 #idle_inhibitor.activated {
-    background-color: #158F9C;
-    color: #FFFFFF;
+  background-color: #158F9C;
+  color: #FFFFFF;
 }
 
-#mpd {
-}
+#mpd {}
 
-#mpd.disconnected {
-}
+#mpd.disconnected {}
 
-#mpd.stopped {
-}
+#mpd.stopped {}
 
-#mpd.paused {
-}
+#mpd.paused {}
 
-#language {
-}
+#language {}
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
+  background: #97e1ad;
+  color: #000000;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
 }
 
-#keyboard-state > label {
-    padding: 0 5px;
+#keyboard-state>label {
+  padding: 0 5px;
 }
 
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
+#keyboard-state>label.locked {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #scratchpad {
-    background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+  background-color: transparent;
 }

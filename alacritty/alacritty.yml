@@ -16,3 +16,7 @@ font:
     style: Bold Italic
 
   size: 16
+
+window:
+  dynamic_padding: true
+  dynamic_title: true
