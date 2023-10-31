@@ -1,0 +1,74 @@
+/*
+https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Ffcqqdbdtu9sb1.png
+*/
+
+:root {
+  --bg-01: #e9e2c9;
+  --bg-02: #e9e1c3;
+
+  --accent-01: #585148;
+  --accent-02: #583a24;
+  --accent-03: #7a1405;
+  --accent-04: #158f9c;
+
+  --fg-01: #595148;
+  --fg-02: #583a24;
+
+  --color-01: #2e2928;
+  --color-02: #5e0f04;
+  --color-03: #333F0a;
+  --color-04: #957c16;
+  --color-05: #2a5173;
+  --color-06: #513e56;
+  --color-07: #0e616a;
+  --color-08: #66615c;
+
+  --bright-01: #413d37;
+  --bright-02: #7a1405;
+  --bright-03: #50620f;
+  --bright-04: #b4961a;
+  --bright-05: #366994;
+  --bright-06: #674f6e;
+  --bright-07: #158f9c;
+  --bright-08: #918a83;
+
+  --gradient-801: #7a1405;
+  --gradient-802: #6c261b;
+  --gradient-803: #5e3631;
+  --gradient-804: #504746;
+  --gradient-805: #435658;
+  --gradient-806: #386369;
+  --gradient-807: #2a747d;
+  --gradient-808: #158f9c;
+
+  --supplementary-01: #683504;
+  --supplementary-02: #5f2263;
+  --supplementary-03: #523622;
+  --supplementary-bright-01: #984e06;
+  --supplementary-bright-02: #85308a;
+  --supplementary-bright-03: #784f31;
+
+  --content-01: #262422;
+  --content-02: #3d3a37;
+  --content-03: #4f4b47;
+  --content-bright-01: #66615c;
+  --content-bright-02: #7d7770;
+  --content-bright-03: #918a83;
+
+  --gradient-1600: #7a1405;
+  --gradient-1601: #731d10;
+  --gradient-1602: #6c261b;
+  --gradient-1603: #652e26;
+  --gradient-1604: #5e3631;
+  --gradient-1605: #56403d;
+  --gradient-1606: #504746;
+  --gradient-1607: #4a4e4f;
+  --gradient-1608: #435658;
+  --gradient-1609: #3e5c60;
+  --gradient-1610: #386369;
+  --gradient-1611: #316b73;
+  --gradient-1612: #2a747d;
+  --gradient-1613: #237d87;
+  --gradient-1614: #1c8691;
+  --gradient-1615: #158f9c;
+}
