@@ -16,7 +16,7 @@
          "format": "{icon}",
          "format-icons": {
              "urgent": "",
-             "default": ""
+             "default": ""
          }
     },
     "keyboard-state": {

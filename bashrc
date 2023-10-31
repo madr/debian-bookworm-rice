@@ -53,4 +53,8 @@ alias ssha='eval "$(ssh-agent -s)" && ssh-add'
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
-PS1='\u:\W $(__git_ps1 "(%s)")\$ '
+SWAY_CURSOR_THEME=Breeze_Snow
+
+PS1='\n╔\u:\W $(__git_ps1 "(%s)")\n╚═\$ '
+
+echo "{pipes | tty-clock | cmatrix | hollywood | sl | figlet | toilet | cava}"
