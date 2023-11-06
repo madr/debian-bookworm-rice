@@ -228,7 +228,7 @@ exec swayidle -w \
     before-sleep 'playerctl pause' \
     before-sleep 'swaylock --image /home/aey/.config/sway/wallpapers/football-4.jpg'
 
-gaps inner 12
+gaps inner 6
 
 input type:keyboard {
     xkb_layout se,us

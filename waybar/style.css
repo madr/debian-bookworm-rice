@@ -68,8 +68,8 @@ button:hover {
 
 #workspaces button.focused,
 #workspaces button.active {
-  background: #E9E2C9;
-  color: #2E2928;
+    background: #122121;
+  color: #ffffff;
 }
 
 #workspaces button.urgent {
@@ -103,7 +103,7 @@ button:hover {
   padding: 4px;
   color: #ffffff; /* #583A24; */
   border-radius: 0;
-  margin: 0 0;
+  margin: 4px 0 0;
   border: 0px solid #7a1405;
 }
 
