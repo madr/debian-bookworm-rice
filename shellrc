@@ -62,3 +62,5 @@ PS1='\u:\W $(__git_ps1 "(%s)")\n╚═\$ '
 eval "$(pyenv virtualenv-init -)"
 
 export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+
+export EDITOR=hx
