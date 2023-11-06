@@ -35,6 +35,7 @@ alias gd='git diff'
 alias gs='git switch'
 alias gs-='git switch -'
 alias gsc='git switch -c'
+alias gsmu='git submodule update --remote --merge'
 
 alias glenn='gp'
 alias glass='gb'
@@ -55,6 +56,9 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 
 SWAY_CURSOR_THEME=Breeze_Snow
 
-PS1='\n╔\u:\W $(__git_ps1 "(%s)")\n╚═\$ '
+PS1='\u:\W $(__git_ps1 "(%s)")\n╚═\$ '
 
-echo "{pipes | tty-clock | cmatrix | hollywood | sl | figlet | toilet | cava}"
+#echo "{pipes | tty-clock | cmatrix | hollywood | sl | figlet | toilet | cava}"
+eval "$(pyenv virtualenv-init -)"
+
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
