@@ -1,13 +1,13 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: 'JetBrains Mono', 'Fira Code', Cantarell, 'Ubuntu Mono', monospace;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 window#waybar {
-  background-color: #E9E2C9;
-  border-bottom: 3px solid #7a1405;
-  color: #000000;
+  background-color: transparent; /* #E9E2C9; */
+  border-bottom: 0;
+  color: #ffffff; /* #000000 */
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -50,20 +50,20 @@ button:hover {
 }
 
 #workspaces {
-  margin: 0 0 0 10px;
+  margin: 0 0 0 0;
 }
 
 #workspaces button,
 #workspaces button:hover {
-  background: #E9E2C9;
-  color: #918A83;
+  background: transparent; /*#E9E2C9;*/
+  color: #ffffff; /* #918A83; */
   box-shadow: none;
-  padding: 0 4px 0 0;
+  padding: 0 5px;
   margin: 0 0;
   box-shadow: inherit;
   text-shadow: inherit;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid #7a1405;
+  border-top: none;
+  border-bottom: none;
 }
 
 #workspaces button.focused {
@@ -77,7 +77,7 @@ button:hover {
 
 #mode {
   background-color: #64727D;
-  border-bottom: 3px solid #ffffff;
+  border-top: 3px solid #ffffff;
 }
 
 #clock,
@@ -98,11 +98,11 @@ button:hover {
 #mpd,
 #window,
 #language {
-  background: #E9E2C9;
-  padding: 0 0;
-  color: #583A24;
+  background: transparent; /* #E9E2C9; */
+  padding: 4px;
+  color: #ffffff; /* #583A24; */
   border-radius: 0;
-  margin: 7px 0 8px;
+  margin: 0 0;
   border: 0px solid #7a1405;
 }
 
@@ -112,8 +112,8 @@ button:hover {
   color: #583A24;
 }
 
-#clock {
-  margin-right: 10px;
+#language {
+  margin-right: 4px;
 }
 
 #battery {}
@@ -160,8 +160,8 @@ label:focus {
 #pulseaudio {}
 
 #pulseaudio.muted {
-  background-color: #158F9C;
-  color: #000000;
+  color: #158F9C;
+  opacity: 0.33;
 }
 
 #wireplumber {}

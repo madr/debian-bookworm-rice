@@ -2,18 +2,18 @@
     // "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
-    "spacing": 24, // Gaps between modules (4px)
+    "spacing": 16, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
-    // "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "sway/window"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "backlight", "battery", "sway/language", "clock"],
+    // "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "backlight", "battery", "sway/language"],
     // "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "sway/language", "clock"],
     // Modules configuration
     "sway/workspaces": {
     //     "disable-scroll": true,
     //     "all-outputs": true,
-         "format": "{icon}",
+         "format": "{name}",
          "format-icons": {
              "urgent": "",
              "default": ""
@@ -72,7 +72,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10
     },
     "clock": {
