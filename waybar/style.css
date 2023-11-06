@@ -66,7 +66,8 @@ button:hover {
   border-bottom: none;
 }
 
-#workspaces button.focused {
+#workspaces button.focused,
+#workspaces button.active {
   background: #E9E2C9;
   color: #2E2928;
 }
@@ -238,6 +239,24 @@ label:focus {
   background-color: transparent;
 }
 
+#taskbar {
+    padding-left: 4px;
+    padding-right: 0;
+    margin: 3px 0 0;
+}
+
 #taskbar button {
   padding-top: 8px;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+#taskbar button:hover {
+  box-shadow: none;
+    border: none;
+}
+
+#taskbar button.minimized {
+  opacity: 0.5;
 }

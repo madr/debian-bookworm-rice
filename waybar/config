@@ -5,6 +5,7 @@
     "modules-left": ["wlr/taskbar"],
     "wlr/taskbar": {
         "format": "{icon}",
+        "all-outputs": true,
         "icon-size": 24,
         "icon-theme": "Numix-Circle",
         "tooltip-format": "{title}",
@@ -26,7 +27,7 @@
     "name": "top",
     "position": "top", // Waybar position (top|bottom|left|right)
     "spacing": 16, // Gaps between modules (4px)
-    "modules-left": ["sway/workspaces"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "battery", "sway/language"],
     "sway/workspaces": {
@@ -37,6 +38,18 @@
              "urgent": "",
              "default": ""
          }
+    },
+    "mpris": {
+    	"format": "DEFAULT: {player_icon} {dynamic}",
+    	"format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+    	"player-icons": {
+    		"default": "▶",
+    		"mpv": "🎵"
+    	},
+    	"status-icons": {
+    		"paused": "⏸"
+    	},
+    	// "ignored-players": ["firefox"]
     },
     "keyboard-state": {
         "numlock": true,
@@ -99,7 +112,7 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}",
 	"calendar": {
-		"weeks-pos": "right"
+		"weeks-pos": "left"
 	}
     },
     "cpu": {
@@ -141,10 +154,10 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
+        "format-wifi": "",
         "format-ethernet": "",
-        "tooltip-format": "{ifname} via {gwaddr} ({signalStrength}%)",
-        "format-linked": "{ifname} (No IP) ",
+        "tooltip-format": "{ifname} via {gwaddr} {essid} ({signalStrength}%)",
+        "format-linked": "Disconnected ⚠",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
