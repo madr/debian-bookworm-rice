@@ -23,6 +23,7 @@ echo ". ~/.config/bashrc" >> ~/.bashrc
 Essential packages:
 
 ```sh
+apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev
 apt install alacritty light sway swaylock swayidle seatd waybar imv kanshi nmtui network-manager git fuzzel bash-completion grimshot otf-font-awesome fonts-ubuntu entr fonts-freefont-otf
 ```
 
