@@ -11,3 +11,9 @@ profile dellu24 {
 	output HDMI-A-2 mode 1920x1080 enable scale 1.0 position 0,0
 	output eDP-1 enable scale 1.0 position 0,1080
 }
+
+profile asus_ultrawide {
+	output eDP-1 enable scale 1.0 position 0,0
+	output DP-2 enable scale 1.0 position 1920,0
+}
+
