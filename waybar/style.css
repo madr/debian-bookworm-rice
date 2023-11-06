@@ -237,3 +237,7 @@ label:focus {
 #scratchpad.empty {
   background-color: transparent;
 }
+
+#taskbar button {
+  padding-top: 8px;
+}

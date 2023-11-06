@@ -1,15 +1,34 @@
+[{
+    "name": "apps",
+    "position": "left",
+    "spacing": 16,
+    "modules-left": ["wlr/taskbar"],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 24,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        "app_ids-mapping": {
+          "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    }
+},
 {
-    // "layer": "top", // Waybar at top layer
+    "name": "top",
     "position": "top", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
     "spacing": 16, // Gaps between modules (4px)
-    // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
-    // "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "backlight", "battery", "sway/language"],
-    // "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "sway/language", "clock"],
-    // Modules configuration
+    "modules-right": ["pulseaudio", "network", "battery", "sway/language"],
     "sway/workspaces": {
     //     "disable-scroll": true,
     //     "all-outputs": true,
@@ -109,9 +128,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{icon}",
         "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-plugged": "",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -123,18 +142,19 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr} ({signalStrength}%)",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
+        "tooltip-format": "{volume}% ({desc})",
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format": "{icon}",
+        "format-bluetooth": "",
+        "format-bluetooth-muted": "",
+            "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -161,4 +181,5 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
+]
 
