@@ -1,6 +1,5 @@
 neofetch
 dconf
-helix
 nvim
 pulse
 systemd
@@ -20,3 +19,4 @@ joplin-desktop
 menus
 nextjs-nodejs
 cef_user_data
+btop
