@@ -64,12 +64,14 @@ button:hover {
   text-shadow: inherit;
   border-top: none;
   border-bottom: none;
+  opacity: 0.5;
 }
 
 #workspaces button.focused,
 #workspaces button.active {
-    background: #122121;
+    background: transparent;
   color: #ffffff;
+  opacity: 1;
 }
 
 #workspaces button.urgent {
@@ -153,16 +155,12 @@ label:focus {
 
 #network {}
 
-#network.disconnected {
-  background-color: #7A1405;
-  color: #FFFFFF;
-}
+#network.disconnected {}
 
 #pulseaudio {}
 
 #pulseaudio.muted {
-  color: #158F9C;
-  opacity: 0.33;
+  opacity: 0.5;
 }
 
 #wireplumber {}
@@ -198,11 +196,12 @@ label:focus {
   background-color: #eb4d4b;
 }
 
-#idle_inhibitor {}
+#idle_inhibitor {
+  opacity: 0.5;
+}
 
 #idle_inhibitor.activated {
-  background-color: #158F9C;
-  color: #FFFFFF;
+  opacity: 1;
 }
 
 #mpd {}

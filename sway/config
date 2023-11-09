@@ -270,12 +270,6 @@ bar {
 #output * bg #003333 solid_color
 output * bg /home/aey/.config/sway/wallpapers/football-3.jpg fill
 
-set $border_focused #7a1405
-set $border_unfocused #7a1405
-#set $focused_background #e9e2c9
-#set $unfocused_background #e9e1c3
-#set $font_color #583a24
-
 seat seat0 xcursor_theme Breeze_Snow 16
 exec_always {
     // gsettings set $gnome-schema gtk-theme 'Your theme'
@@ -284,9 +278,10 @@ exec_always {
     // gsettings set $gnome-schema font-name 'Your font name'
 }
 
-#client.focused $border_focused $focused_background $font_color
-#client.unfocused $border_unfocused $unfocused_background $font_color
-#client.focused_inactive $border_unfocused $unfocused_background $font_color
+default_border pixel 20
+client.focused #2d353b #3d484d #9da9a0 #7a8478
+client.unfocused #232a2e #232a2e #232a2e #232a2e
+client.focused_inactive #2d353b #2d353b #859289 #2d353b
 
 #exec cd /home/aey/config && wal -R && cd -
 

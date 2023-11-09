@@ -29,7 +29,7 @@
     "spacing": 16, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "battery", "sway/language"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "battery", "sway/language"],
     "sway/workspaces": {
     //     "disable-scroll": true,
     //     "all-outputs": true,
@@ -157,8 +157,8 @@
         "format-wifi": "",
         "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr} {essid} ({signalStrength}%)",
-        "format-linked": "Disconnected ⚠",
-        "format-disconnected": "Disconnected ⚠",
+        "format-linked": "⚠",
+        "format-disconnected": "⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
