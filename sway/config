@@ -278,7 +278,6 @@ exec_always {
     // gsettings set $gnome-schema font-name 'Your font name'
 }
 
-default_border pixel 20
 client.focused #2d353b #3d484d #9da9a0 #7a8478
 client.unfocused #232a2e #232a2e #232a2e #232a2e
 client.focused_inactive #2d353b #2d353b #859289 #2d353b
@@ -287,8 +286,8 @@ client.focused_inactive #2d353b #2d353b #859289 #2d353b
 
 exec_always systemctl --user start sway-session.target
 
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 8
+default_floating_border pixel 8
 #font pango:monospace 0
 #titlebar_padding 1
 #titlebar_border_thickness 0

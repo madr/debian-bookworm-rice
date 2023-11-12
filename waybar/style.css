@@ -58,7 +58,7 @@ button:hover {
   background: transparent; /*#E9E2C9;*/
   color: #ffffff; /* #918A83; */
   box-shadow: none;
-  padding: 0 5px;
+  padding: 2px 5px 0;
   margin: 0 0;
   box-shadow: inherit;
   text-shadow: inherit;
