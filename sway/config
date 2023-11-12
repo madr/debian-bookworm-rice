@@ -278,8 +278,9 @@ exec_always {
     // gsettings set $gnome-schema font-name 'Your font name'
 }
 
-client.focused #2d353b #3d484d #9da9a0 #7a8478
-client.unfocused #232a2e #232a2e #232a2e #232a2e
+# color order: border, background, title text, indicator
+client.focused #22383c #2d353b #9da9a0 #475259
+client.unfocused #2d353b #232a2e #9da9a0 #2d333b
 client.focused_inactive #2d353b #2d353b #859289 #2d353b
 
 #exec cd /home/aey/config && wal -R && cd -
@@ -287,9 +288,9 @@ client.focused_inactive #2d353b #2d353b #859289 #2d353b
 exec_always systemctl --user start sway-session.target
 
 default_border pixel 8
-default_floating_border pixel 8
-#font pango:monospace 0
-#titlebar_padding 1
-#titlebar_border_thickness 0
+default_floating_border pixel 13
+font JetBrainsMono 9
+titlebar_padding 5
+titlebar_border_thickness 0
 
 include /etc/sway/config.d/*
