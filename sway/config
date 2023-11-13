@@ -279,8 +279,8 @@ exec_always {
 }
 
 # color order: border, background, title text, indicator
-client.focused #232a2e #232a2e #9da9a0 #475259
-client.unfocused #2d353b #2d353b #ffffff #2d333b
+client.focused #232a2e #232a2e #ffffff #475259
+client.unfocused #2d353b #2d353b #859289 #2d333b
 client.focused_inactive #2d353b #2d353b #859289 #2d353b
 
 #exec cd /home/aey/config && wal -R && cd -
