@@ -222,11 +222,11 @@ bindsym $mod+r mode "resize"
 # xwayland disable
 
 exec swayidle -w \
-    timeout 360 'swaylock -f --image /home/aey/.config/sway/wallpapers/football-4.jpg' \
+    timeout 360 'swaylock -f --image /home/aey/.config/sway/wallpapers/football-3.jpg' \
 	timeout 1000 'swaymsg "output * power off"' \
 	resume 'swaymsg "output * power on"' \
     before-sleep 'playerctl pause' \
-    before-sleep 'swaylock --image /home/aey/.config/sway/wallpapers/football-4.jpg'
+    before-sleep 'swaylock --image /home/aey/.config/sway/wallpapers/football-3.jpg'
 
 gaps inner 6
 
@@ -268,26 +268,24 @@ bar {
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg #003333 solid_color
-output * bg /home/aey/.config/sway/wallpapers/football-3.jpg fill
+#output * bg #2D353B solid_color
+output * bg /home/aey/.config/sway/wallpapers/bg-dark.jpg center #232a2e
 
 seat seat0 xcursor_theme Breeze_Snow 16
 exec_always {
-    // gsettings set $gnome-schema gtk-theme 'Your theme'
-    // gsettings set $gnome-schema icon-theme 'Your icon theme'
     gsettings set $gnome-schema cursor-theme 'Breeze_Snow'
-    // gsettings set $gnome-schema font-name 'Your font name'
 }
 
 # color order: border, background, title text, indicator
-client.focused #232a2e #232a2e #ffffff #475259
-client.unfocused #2d353b #2d353b #859289 #2d333b
+client.focused #131a1e #131a1e #ffffff #475259
+client.unfocused #232a2e #232a2e #859289 #2d333b
 client.focused_inactive #2d353b #2d353b #859289 #2d353b
 
 #exec cd /home/aey/config && wal -R && cd -
 
 exec_always systemctl --user start sway-session.target
 
-default_border pixel 8
+default_border pixel 2
 default_floating_border pixel 13
 font JetBrainsMono 9
 titlebar_padding 5

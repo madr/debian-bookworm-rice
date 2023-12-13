@@ -29,7 +29,7 @@
     "spacing": 16, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "battery", "sway/language"],
+    "modules-right": ["sway/tray", "tray", "idle_inhibitor", "pulseaudio", "network", "battery", "sway/language"],
     "sway/workspaces": {
     //     "disable-scroll": true,
     //     "all-outputs": true,
