@@ -1,7 +1,7 @@
 [[language]]
 name = "python"
 auto-format = true
-formatter = { command = "bash", args = ["-c", "isort - | ruff check --select I --fix -"] }
+formatter = { command = "bash", args = ["-c", "isort - | ruff format --silent -"] }
 scope = "source.python"
 
 [language-server.pylsp.config.pylsp.plugins]
