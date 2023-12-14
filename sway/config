@@ -230,6 +230,11 @@ exec swayidle -w \
 
 gaps inner 6
 
+input type:touchpad {
+    tap disabled
+    natural_scroll enabled
+}
+
 input type:keyboard {
     xkb_layout se,us
     xkb_options grp:alt_shift_toggle
@@ -248,6 +253,13 @@ bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+# switch to next workspace
+bindsym $mod+Mod1+Left workspace prev
+bindsym $mod+Mod1+Right workspace next
+# Move focused container to workspace
+bindsym $mod+Mod1+Shift+Left move container to prev workspace
+bindsym $mod+Mod1+Shift+Right move container to next workspace
 
 
 #bindsym Print        exec grimshot save output
