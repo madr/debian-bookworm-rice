@@ -1,11 +1,12 @@
 [[language]]
 name = "python"
 auto-format = true
-formatter = { command = "bash", args = ["-c", "isort - | ruff format --silent -"] }
+formatter = { command = "sh", args = ["-c", "ruff check --fix --silent - | ruff format - | ruff --select I --fix --silent -"] }
 scope = "source.python"
 
 [language-server.pylsp.config.pylsp.plugins]
 rope_autoimport = {enabled = true}
+ruff = {enabled = true, extendSelect = ["I"]}
 
 [[language]]
 name = "elixir"
