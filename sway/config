@@ -228,7 +228,7 @@ exec swayidle -w \
     before-sleep 'playerctl pause' \
     before-sleep 'swaylock --image /home/aey/.config/sway/wallpapers/football-3.jpg'
 
-gaps inner 6
+gaps inner 16
 
 input type:touchpad {
     tap disabled
@@ -252,7 +252,7 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym XF86AudioMicMute exec ~/.config/sway/m4-toggle-profile.sh
 
 # switch to next workspace
 bindsym $mod+Mod1+Left workspace prev
@@ -281,7 +281,10 @@ bar {
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg #003333 solid_color
 #output * bg #2D353B solid_color
-output * bg /home/aey/.config/sway/wallpapers/bg-dark.jpg center #232a2e
+#output * bg /home/aey/.config/sway/wallpapers/bg-dark.jpg center #232a2e
+#output * bg /home/aey/sync/wallpapers/toby-elliott-Nqdx6-LW4VE-unsplash.jpg fill
+output * bg /home/aey/.config/sway/wallpapers/bg-white.jpg center #fbfbfb
+#output DP-2 bg /home/aey/sync/wallpapers/norris-niman-ABtmE3jhaPQ-unsplash.jpg fill
 
 seat seat0 xcursor_theme Breeze_Snow 16
 exec_always {
@@ -289,12 +292,13 @@ exec_always {
 }
 
 # color order: border, background, title text, indicator
-client.focused #131a1e #131a1e #ffffff #475259
+client.focused #331133 #131a1e #ffffff #475259
 client.unfocused #232a2e #232a2e #859289 #2d333b
 client.focused_inactive #2d353b #2d353b #859289 #2d353b
 
 #exec cd /home/aey/config && wal -R && cd -
 
+exec kanshi
 exec_always systemctl --user start sway-session.target
 
 default_border pixel 2

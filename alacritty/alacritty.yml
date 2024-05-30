@@ -22,4 +22,4 @@ window:
   dynamic_title: true
 
 import:
- - ~/.config/alacritty/themes/everforest_dark.yaml
+ - ~/.config/alacritty/themes/catppuccin_macchiato.yaml

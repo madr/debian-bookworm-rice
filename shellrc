@@ -1,23 +1,59 @@
-alias gl="git log --oneline --decorate"
-
+# pyenv init
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
+# ASDF init
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
 
+# Long finger for you, Debian ...
+# Sad to see you are hogging the apt python install
+# Also, IMHO, I prefer pip x instead of apt install python-x
 function pip-user-install () {
   pip install -U --break-system-packages $*
 }
 
-export XDG_SCREENSHOTS_DIR="/home/aey/screenshots"
-export PATH=/home/aey/.cargo/bin:/home/aey/.local/bin:$PATH
-export PATH=/home/aey/.asdf/installs/rust/1.73.0/bin:$PATH
+# Helpers for Momentum 4 headset.
+# It cannot have high fidelity sound and mic activated 
+# at the same time,
+# so use these helpers to jump between profiles.
+# also: FUCK YOU, SENNHEISER.
+function m4-current () {
+  pactl list cards | awk -v RS='' '/bluez/' | awk -F': ' '/Active Profile/ { print $2 }'
+}
 
+function m4-mic-on () {
+  pactl set-card-profile bluez_card.80_C3_BA_49_EF_63 headset-head-unit-msbc
+}
+
+function m4-mic-off () {
+  pactl set-card-profile bluez_card.80_C3_BA_49_EF_63 a2dp-sink-aptx
+}
+
+function m4-toggle-profile () {
+  p=$(m4-current)
+  if [ $p = "a2dp-sink-aptx" ]; then
+    m4-mic-on
+  else
+    m4-mic-off
+  fi
+}
+
+# setup where to store screenshots
+# shortcuts and key binds are stored in sway config
+export XDG_SCREENSHOTS_DIR="/home/aey/screenshots"
+
+# rust setup, handled by ASDF
+export PATH=/home/aey/.cargo/bin:/home/aey/.local/bin:$PATH
+export PATH=/home/aey/.asdf/installs/rust/1.77.2/bin:$PATH
+
+# aliases
+# curated list in chronological order,
+# things not needed will be erased
 alias nom='npm'
 alias nrd='npm run dev'
-
 alias ll='ls -GAFho'
 alias imv='imv-wayland'
 alias gap="git add -p"
@@ -39,31 +75,45 @@ alias gs='git switch'
 alias gs-='git switch -'
 alias gsc='git switch -c'
 alias gsmu='git submodule update --remote --merge'
-
 alias glenn='gp'
 alias glass='gb'
-
 alias fucking='sudo'
 alias effing='fucking'
-
 alias vadre="curl -4 http://wttr.in/Östersund"
 alias vedreh="curl -4 http://wttr.in/Stockholm"
 alias vädret="curl -4 http://wttr.in/Borlänge"
 alias whatsmyip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias whois='dig -t ANY'
-
 alias ssha='eval "$(ssh-agent -s)" && ssh-add'
 
+# Look and Feel
+SWAY_CURSOR_THEME=Breeze_Snow
+
+# git prompt init
+PS1='\u:\W $(__git_ps1 "(%s)")\n╚═\$ '
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
-SWAY_CURSOR_THEME=Breeze_Snow
-
-PS1='\u:\W $(__git_ps1 "(%s)")\n╚═\$ '
-
+# wanna flash some salesman?
 #echo "{pipes | tty-clock | cmatrix | hollywood | sl | figlet | toilet | cava}"
-eval "$(pyenv virtualenv-init -)"
 
+# nvidia tweaks
+#export WLR_RENDERER=vulkan
+export WLR_NO_HARDWARE_CURSORS=1
+export XWAYLAND_NO_GLAMOR=1
+
+# needed for podman-docker and podman-compose,
+# uncomment of system is stricty podman based
 export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
+#Playmaker setup scripts
+function playmaker-workstation-up () {
+  podman-compose -f ~/code/playmaker-workstation/docker-compose.yml up -d > /dev/null 2>&1
+}
+
+function playmaker-workstation-down () {
+  podman-compose -f ~/code/playmaker-workstation/docker-compose.yml stop > /dev/null 2>&1
+}
+
+# make Helix the preferred editor
 export EDITOR=hx

@@ -1,4 +1,4 @@
-theme = "everforest_dark"
+theme = "vim_dark_high_contrast"
 
 [editor]
 bufferline = "multiple"
