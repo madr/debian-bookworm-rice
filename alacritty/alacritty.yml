@@ -22,4 +22,4 @@ window:
   dynamic_title: true
 
 import:
- - ~/.config/alacritty/themes/catppuccin_macchiato.yaml
+ - ~/.config/alacritty/themes/gruvbox_dark.yaml

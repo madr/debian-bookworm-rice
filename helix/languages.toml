@@ -2,11 +2,23 @@
 name = "python"
 auto-format = true
 formatter = { command = "sh", args = ["-c", "ruff check --fix --silent - | ruff format - | ruff --select I --fix --silent -"] }
-scope = "source.python"
 
-[language-server.pylsp.config.pylsp.plugins]
-rope_autoimport = {enabled = true}
-ruff = {enabled = true, extendSelect = ["I"]}
+# [language-server.pylsp.config.pylsp.plugins]
+# rope_autoimport = { enabled = true }
+# rope = { enabled = true }
+# ruff = { enabled = true, extendSelect = ["I"]}
+
+[language.debugger]
+name = "debugpy"
+transport = "stdio"
+command = "python"
+args = ["-m",  "debugpy.adapter"]
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [ { name = "entrypoint", completion = "filename", default = "." } ]
+args = { mode = "debug", program = "{0}" }
 
 [[language]]
 name = "elixir"

@@ -228,7 +228,7 @@ exec swayidle -w \
     before-sleep 'playerctl pause' \
     before-sleep 'swaylock --image /home/aey/.config/sway/wallpapers/football-3.jpg'
 
-gaps inner 16
+gaps inner 4
 
 input type:touchpad {
     tap disabled
@@ -277,6 +277,8 @@ bindsym $mod+Shift+Escape exec $manlock
 bar {
     swaybar_command waybar
 }
+
+# exec waybar
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg #003333 solid_color

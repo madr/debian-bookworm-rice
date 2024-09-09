@@ -1,4 +1,4 @@
-theme = "vim_dark_high_contrast"
+theme = "catppuccin_mocha"
 
 [editor]
 bufferline = "multiple"
@@ -6,5 +6,5 @@ bufferline = "multiple"
 true-color = true
 
 [editor.lsp]
-auto-signature-help = false
+auto-signature-help = true
 display-messages = true
