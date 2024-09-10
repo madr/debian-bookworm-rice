@@ -305,7 +305,8 @@ exec_always systemctl --user start sway-session.target
 
 default_border pixel 2
 default_floating_border pixel 13
-font JetBrainsMono 9
+#font JetBrainsMono 9
+font Roboto 10
 titlebar_padding 5
 titlebar_border_thickness 0
 
