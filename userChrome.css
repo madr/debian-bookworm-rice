@@ -1,0 +1,39 @@
+/*
+ * Do not remove the @namespace line -- it's required for correct functioning
+ */
+ @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+ /*
+  * Hide tab bar, navigation bar and scrollbars
+  * !important may be added to force override, but not necessary
+  * #content is not necessary to hide scroll bars
+  */
+ #TabsToolbar {visibility: collapse;}
+ 
+ /* #navigator-toolbox {visibility: collapse;} */
+ 
+ browser {margin-right: -14px; margin-bottom: -14px;}
+
+ #back-button, #forward-button {
+   display: none;
+ }
+
+ #unified-extensions-button{
+   width: 0.1px;
+   padding-inline: 0 !important
+ }
+ #unified-extensions-button > .toolbarbutton-icon{
+   width: 0 !important;
+ }
+
+ #PanelUI-menu-button {
+   display: none !important;
+ }
+
+ #page-action-buttons { display: none !important;}
+
+ #tracking-protection-icon-container {
+   display: none;
+ }
+
+ #identity-box.extensionPage > #identity-icon-box{ display: none }

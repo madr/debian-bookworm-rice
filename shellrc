@@ -117,3 +117,5 @@ function playmaker-workstation-down () {
 
 # make Helix the preferred editor
 export EDITOR=hx
+
+alias wwwdev="firefox -P chromeless --new-instance"
