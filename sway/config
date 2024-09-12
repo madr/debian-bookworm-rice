@@ -228,7 +228,7 @@ exec swayidle -w \
     before-sleep 'playerctl pause' \
     before-sleep 'swaylock --image /home/aey/.config/sway/wallpapers/football-3.jpg'
 
-gaps inner 4
+gaps inner 2
 
 input type:touchpad {
     tap disabled
@@ -248,11 +248,11 @@ bindsym $mod+d exec --no-startup-id fuzzel
 
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
-
 bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioMicMute exec ~/.config/sway/m4-toggle-profile.sh
+bindsym XF86Display exec (killall kanshi && kanshi)
 
 # switch to next workspace
 bindsym $mod+Mod1+Left workspace prev
@@ -271,14 +271,14 @@ bindsym Mod1+Print        exec grimshot copy active
 bindsym Mod1+Shift+Print  exec grimshot copy area
 bindsym Mod1+Ctrl+Print   exec grimshot copy window
 
+bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+
+# apps
+#bindsym $mod+Ctrl+e exec $term -e ranger      # file explorer
+bindsym $mod+Ctrl+e exec thunar      # file explorer
+
 set $manlock exec bash ~/.config/sway/manual-lock.sh
 bindsym $mod+Shift+Escape exec $manlock
-
-bar {
-    swaybar_command waybar
-}
-
-# exec waybar
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg #003333 solid_color
@@ -289,8 +289,12 @@ output * bg /home/aey/.config/sway/wallpapers/bg-white.jpg center #fbfbfb
 #output DP-2 bg /home/aey/sync/wallpapers/norris-niman-ABtmE3jhaPQ-unsplash.jpg fill
 
 seat seat0 xcursor_theme Breeze_Snow 16
-exec_always {
-    gsettings set $gnome-schema cursor-theme 'Breeze_Snow'
+# exec_always {
+#     gsettings set $gnome-schema cursor-theme 'Breeze_Snow'
+# }
+
+bar {
+  swaybar_command waybar  
 }
 
 # color order: border, background, title text, indicator
@@ -301,7 +305,7 @@ client.focused_inactive #2d353b #2d353b #859289 #2d353b
 #exec cd /home/aey/config && wal -R && cd -
 
 exec kanshi
-exec_always systemctl --user start sway-session.target
+exec systemctl --user start sway-session.target
 
 default_border pixel 2
 default_floating_border pixel 13

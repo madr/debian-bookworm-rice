@@ -1,20 +1,20 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Roboto, 'JetBrains Mono', 'Fira Code', Cantarell, 'Ubuntu Mono', monospace;
+  font-family: 'DejaVu Sans', 'Liberation Sans', 'JetBrains Mono', 'Fira Code', Cantarell, 'Ubuntu Mono', monospace;
   font-size: 12px;
 }
 
 window#waybar {
   /* #E9E2C9; */
   border-bottom: 0;
-  color: #ffffff;
+  color: #333333;
   /* #000000 */
   transition-property: background-color;
   transition-duration: .5s;
 }
 
 window#waybar.main {
-  background-color: #222a2a;
+  background-color: #fbfbfb;
   border-radius: 0px;
 }
 
@@ -69,7 +69,7 @@ button:hover {
 #workspaces button:hover {
   background: transparent;
   /*#E9E2C9;*/
-  color: #ffffff;
+  color: #000000;
   /* #918A83; */
   box-shadow: none;
   padding: 0 5px;
@@ -78,18 +78,19 @@ button:hover {
   text-shadow: inherit;
   border-top: none;
   border-bottom: none;
-  opacity: 0.5;
+  opacity: 0.66;
 }
 
 #workspaces button.focused,
 #workspaces button.active {
   background: transparent;
-  color: #ffffff;
+  color: #000000;
   opacity: 1;
 }
 
 #workspaces button.urgent {
   background-color: #7A1405;
+  color: #ffffff;
 }
 
 #mode {
@@ -118,7 +119,7 @@ button:hover {
   background: transparent;
   /* #E9E2C9; */
   padding: 4px;
-  color: #ffffff;
+  color: #222222;
   /* #583A24; */
   border-radius: 0;
   margin: 2px 0;
@@ -213,7 +214,7 @@ label:focus {
 }
 
 #idle_inhibitor {
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 #idle_inhibitor.activated {
