@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -267,9 +267,9 @@ bindsym Print        exec grimshot save active
 bindsym Shift+Print  exec grimshot save area
 bindsym Ctrl+Print   exec grimshot save window
 
-bindsym Mod1+Print        exec grimshot copy active
-bindsym Mod1+Shift+Print  exec grimshot copy area
-bindsym Mod1+Ctrl+Print   exec grimshot copy window
+#bindsym $mod++Shift+Print       exec grimshot copy active
+bindsym $mod+Print              exec grimshot copy area
+bindsym $mod+Shift+Print        exec grimshot copy window
 
 bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
 
