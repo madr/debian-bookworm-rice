@@ -4,10 +4,15 @@
   font-size: 12px;
 }
 
+#deco-bl {
+  color: #000000;
+  font-size: 11pt;
+}
+
 window#waybar {
   /* #E9E2C9; */
   border-bottom: 0;
-  color: #333333;
+  color: #222222;
   /* #000000 */
   transition-property: background-color;
   transition-duration: .5s;
@@ -95,7 +100,7 @@ button:hover {
 
 #mode {
   background-color: #64727D;
-  border-top: 3px solid #ffffff;
+  border-top: 3px solid #000000;
 }
 
 #clock,

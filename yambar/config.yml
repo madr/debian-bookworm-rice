@@ -1,0 +1,171 @@
+awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=14
+std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
+
+bar:
+  height: 24
+  location: bottom
+  background: 000000ee
+  font: Roboto:pixelsize=13
+  spacing: 6
+
+  left:
+    - i3:
+        spacing: 3
+        content:
+          "":
+            map:
+              default: {string: {text: "{name}"}}
+              conditions:
+                state == focused: {string: {text: "<{name}>"}}
+  right:
+    - removables:
+        anchors:
+          drive: &drive { text: , font: *awesome}
+          optical: &optical {text: , font: *awesome}
+        spacing: 5
+        content:
+          map:
+            conditions:
+              ~mounted:
+                map:
+                  on-click: udisksctl mount -b {device}
+                  conditions:
+                    ~optical: [{string: *drive}, {string: {text: "{label}"}}]
+                    optical: [{string: *optical}, {string: {text: "{label}"}}]
+              mounted:
+                map:
+                  on-click: udisksctl unmount -b {device}
+                  conditions:
+                    ~optical:
+                      - string: {<<: *drive, deco: *std_underline}
+                      - string: {text: "{label}"}
+                    optical:
+                      - string: {<<: *optical, deco: *std_underline}
+                      - string: {text: "{label}"}
+    - cpu:
+        poll-interval: 2500
+        content:
+          map:
+            conditions:
+              id < 0:
+                - string: {text: "{cpu}%"}
+    - sway-xkb:
+        identifiers: [1:1:AT_Translated_Set_2_keyboard]
+        content:
+          - string: {text: "{layout}"}
+    - network:
+        name: enp1s0
+        content:
+          map:
+            conditions:
+              ~carrier: {empty: {}}
+              carrier:
+                map:
+                  default: {string: {text: , font: *awesome, foreground: ffffff66}}
+                  conditions:
+                    state == up && ipv4 != "": {string: {text: , font: *awesome}}
+    - network:
+        name: wlp0s20f3
+        poll-interval: 1000
+        content:
+          map:
+            default: {string: {text: , font: *awesome, foreground: ffffff66}}
+            conditions:
+              state == down: {string: {text: , font: *awesome, foreground: ff0000ff}}
+              state == up:
+                map:
+                  default:
+                    - string: {text: , font: *awesome}
+
+                  conditions:
+                    ipv4 == "":
+                      - string: {text: , font: *awesome, foreground: ffffff66}
+    - battery:
+        name: BAT0
+        poll-interval: 30000
+        anchors:
+          discharging: &discharging
+            list:
+              items:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text: , foreground: ff0000ff, font: *awesome}
+                      - string: {text: , foreground: ffa600ff, font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , foreground: 00ff00ff, font: *awesome}
+        content:
+          map:
+            conditions:
+              state == unknown:
+                <<: *discharging
+              state == discharging:
+                <<: *discharging
+              state == charging:
+                - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}% {estimate}"}
+              state == full:
+                - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}% full"}
+              state == "not charging":
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text:  , foreground: ff0000ff, font: *awesome}
+                      - string: {text:  , foreground: ffa600ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome, right-margin: 10}
+    - clock:
+        date-format: "%Y-%m-%d"
+        time-format: "%H:%M"
+        content:
+          - string: {text: "{time}"}
+    - pipewire:
+        anchors:
+          volume: &volume
+            conditions:
+              muted: {string: {text: "", foreground: ff0000ff}}
+              ~muted: {string: {text: ""}}
+        content:
+          list:
+            items:
+              - map:
+                  conditions:
+                    type == "sink":
+                      map:
+                        conditions:
+                          icon == "audio-headset-bluetooth":
+                            string: {text: "🎧"}
+                        default:
+                          - ramp:
+                              tag: linear_volume
+                              items:
+                                - string: {text: "🔈"}
+                                - string: {text: "🔉"}
+                                - string: {text: "🔊"}
+              - map:
+                  <<: *volume
+    - label:
+        content:
+          string:
+            on-click: systemctl suspend
+            text: 
+            font: *awesome
+    - label:
+        content:
+          string:
+            on-click: systemctl poweroff
+            text: 
+            font: *awesome

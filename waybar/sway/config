@@ -3,7 +3,7 @@
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "spacing": 4, // Gaps between modules (4px)
     "margin": 0,
-    "modules-left": ["sway/workspaces", "sway/mode","wlr/taskbar"],
+    "modules-left": ["custom/bl", "sway/workspaces", "sway/mode","wlr/taskbar"],
     "modules-center": ["custom/media"],
     "modules-right": [
         "tray", 
@@ -15,6 +15,10 @@
         "sway/language", 
         "clock",
     ],
+    "custom/bl": {
+		"format": "",
+		"tooltip": false
+	},
     "sway/workspaces": {
     //     "disable-scroll": true,
     //     "all-outputs": true,
