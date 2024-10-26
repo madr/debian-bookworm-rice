@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <keyboard>
+    <default/>
+    <keybind key="W-d">
+      <action name="Execute" command="wofi --show drun"/>
+    </keybind>
+  </keyboard>
+  <theme>
+    <cornerRadius>5</cornerRadius>
+    <name>Numix-Ocean-Ocean</name>
+    <dropShadows/>
+  </theme>
+  <libinput>
+    <device>
+      <naturalScroll>yes</naturalScroll>
+      <tap>no</tap>
+    </device>
+  </libinput>
+  <placement>
+    <policy>Automatic</policy>
+  </placement>
+</labwc_config>

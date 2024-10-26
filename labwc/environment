@@ -1,0 +1,5 @@
+XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle
+XCURSOR_THEME=capitaine-cursors-light
+XCURSOR_SIZE=24
+XKB_DEFAULT_LAYOUT=se,us
+XKB_DEFAULT_VARIANT=
