@@ -1,10 +1,8 @@
-(cat ~/.cache/wal/sequences &)
-
 # pyenv init
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+  eval "$(pyenv virtualenv-init -)"
 
 # ASDF init
 . "$HOME/.asdf/asdf.sh"
@@ -95,7 +93,7 @@ SWAY_CURSOR_THEME=Breeze_Snow
 PS1='\u:\W $(__git_ps1 "(%s)")\n╚═\$ '
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
-
+PS1='🭁\e[7m$(whoami) \e[46m🭨\e[0m\e[30;46m$(basename $PWD) \e[35m🭨\e[0m\e[30;45m$(__git_ps1 "%s")\e[0m\e[35m🭌\e[0m\n$ '
 # wanna flash some salesman?
 #echo "{pipes | tty-clock | cmatrix | hollywood | sl | figlet | toilet | cava}"
 

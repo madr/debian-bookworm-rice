@@ -12,7 +12,7 @@
   "buffer_font_family": "JetBrains Mono NL",
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Mocha - No Italics",
+    "light": "Norrsken Svalbard",
     "dark": "One Dark"
   },
   "project_panel": {
@@ -23,5 +23,35 @@
   "telemetry": {
     "diagnostics": false,
     "metrics": false
+  },
+  "languages": {
+    "Markdown": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--prose-wrap",
+            "always",
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      }
+    },
+    "JavaScript": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--prose-wrap",
+            "always",
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      }
+    }
   }
 }
